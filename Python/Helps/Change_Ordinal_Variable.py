@@ -4,7 +4,7 @@ Created on Tue Oct 27 12:59:05 2020
 
 @author: Carlos Heredia Pimienta
 
-Explanation: To change from categorical variables to ordinal
+Explanation: To change from categorical to ordinal variable
 
 """
 import pandas as pd
