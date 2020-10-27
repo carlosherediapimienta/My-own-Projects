@@ -4,7 +4,7 @@ Created on Tue Oct 27 12:59:05 2020
 
 @author: Carlos Heredia Pimienta
 
-Explanation: To change from categorical to 0/1 columns.
+Explanation: To change from categorical variable to 0/1 columns.
 
 """
 import pandas as pd
