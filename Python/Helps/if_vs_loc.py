@@ -4,7 +4,7 @@ Created on Wed Oct 28 13:02:22 2020
 
 @author: Carlos Heredia Pimienta
 
-Explanation: Comparison IF with .loc
+Explanation: Comparison IF vs .loc
 
 """
 import pandas as pd
