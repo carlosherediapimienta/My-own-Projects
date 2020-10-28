@@ -28,15 +28,13 @@ for i in range(len(df_train_if.Title)):
             (df_train_if.Title[i] != 'Mr') and (df_train_if.Title[i] != 'Master'):
             df_train_if.Title[i] = 'Rare'
         
-# My proposal
-
-df['Title'].replace(wrong_values, right_values, inplace = True)
-df.loc[~df['Title'].isin(right_values), 'Title'] = 'Rare'
-
-
 # Con el .loc
     df_train_loc.loc[df_train_loc['Title'] == 'Mlle', 'Title'] = 'Miss'
     df_train_loc.loc[df_train_loc['Title'] == 'Ms', 'Title'] = 'Miss'
     df_train_loc.loc[df_train_loc['Title'] == 'Mme', 'Title'] = 'Mrs'
     df_train_loc.loc[(df_train_loc['Title'] != 'Mrs') & (df_train_loc['Title'] != 'Miss') &\
           (df_train_loc['Title'] != 'Mr') & (df_train_loc['Title'] != 'Masters'), 'Title'] = 'Rare'
+    
+# Marc's proposal - Como mejorar el loc
+# df['Title'].replace(wrong_values, right_values, inplace = True)
+# df.loc[~df['Title'].isin(right_values), 'Title'] = 'Rare'
