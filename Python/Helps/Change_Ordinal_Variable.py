@@ -12,7 +12,9 @@ import pandas as pd
 df_train = pd.read_csv("train.csv")
 
 df_train['Title'] = df_train.Name.str.extract(' ([A-Za-z]+)\.', expand = False)
-    
+
+# Para mejorar esta parte, se debería cambiar el bucle FOR por el .loc, tal y como está
+# en el documento IF vs LOC.
 for i in range(len(df_train.Title)):
     if df_train.Title[i] == 'Mlle':
             df_train.Title[i] = 'Miss'
