@@ -1,0 +1,15 @@
+# Author: Carlos Heredia Pimienta
+# Date: 22/10/20
+
+# Fundamental solution Heat Equation: Limit r->0 G(r,x) = \delta(x)
+
+With[{tmin = -2, tmax = 2},
+ Manipulate[
+  Dynamic@
+   Plot[f[t], {t, tmin, tmax},
+    PlotRange -> {Automatic, {0, 10}},
+    Ticks -> {xticks, Automatic}],
+  {{r, 1.}, 0, 2, .00001, Appearance -> "Labeled"},
+  {xticks, None},
+  Initialization :> (f[x_] := 1/(2 Sqrt[\[Pi] r]) Exp[-(x^2/(4 r))]; 
+    xticks := {#, Round[f[#], .1]} & /@ Subdivide[tmin, tmax, 11])]]
