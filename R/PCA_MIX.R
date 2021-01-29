@@ -23,5 +23,4 @@ PCA.MIX <- function(df, n = 3 ){
   }  
 }
 
-
 data("gironde")
