@@ -1,8 +1,8 @@
 # Read files
 
-df.dispon <- read.csv("-- Hiden --",sep=";")
-df.nrsrvs <- read.csv("-- Hiden --",sep=";")
-df.festivos <- read.csv("-- Hiden --",sep=";")
+df.dispon <- read.csv("-- Hidden --",sep=";")
+df.nrsrvs <- read.csv("-- Hidden --",sep=";")
+df.festivos <- read.csv("-- Hidden --",sep=";")
 
 library(dplyr)
 library(lubridate)
@@ -103,9 +103,9 @@ multiplot_t6 <- function(p1,p2,p3,p4,p5,p6, plotlist=NULL, file, cols=1, layout=
 }
 
 # Rename
-df.set1 <- df.set1 %>% rename(v1 = --Hiden--)
-df.set2 <- df.set2 %>% rename(v1 = -- Hiden--)
-df.set3 <- df.set3 %>% rename(v2 = -- Hiden --)
+df.set1 <- df.set1 %>% rename(v1 = --Hidden--)
+df.set2 <- df.set2 %>% rename(v1 = -- Hidden--)
+df.set3 <- df.set3 %>% rename(v2 = -- Hidden --)
 
 # Dates
 df.set1$variable <- as.factor(df.set1$variable)
@@ -127,8 +127,8 @@ df.set3$variable <- LastDayInMonth(df.set3$variable)
 df.set3 <- df.set3[,-1]
 
 # Tables
-df.set4 <- merge (df.set2, df.set3, by = c(-- Hiden --))
-df <- merge(df.set4, df.set1, by =  -- Hiden --)
+df.set4 <- merge (df.set2, df.set3, by = c(-- Hidden --))
+df <- merge(df.set4, df.set1, by =  -- Hidden --)
 df <- df %>% filter(variable <= variable & variable  <= variable)
 
 # Data Frame
@@ -155,19 +155,19 @@ df.graph$variable <- as.integer(rownames(df.group))
 
 plot1 <- ggplot(df.graph, aes(variable, variable)) +
   geom_line()+
-  ggtitle("-- Hiden --")
+  ggtitle("-- Hidden --")
 
 plot2 <- ggplot(df.graph, aes(variable, variable)) +
   geom_line()+
-  ggtitle("-- Hiden --")
+  ggtitle("-- Hidden --")
 
 plot3 <- ggplot(df.graph, aes(variable, variable)) +
   geom_line()+
-  ggtitle("-- Hiden --")
+  ggtitle("-- Hidden --")
 
 plot4 <- ggplot(df.graph, aes(variable, variable)) +
   geom_line()+
-  ggtitle("-- Hiden --")
+  ggtitle("-- Hidden --")
 
 multiplot(plot1, plot2, plot3, plot4, cols=2)  
 
@@ -225,5 +225,5 @@ MAE(variable, real$variable)
 pd <- position_dodge(0.3)
 ggplot(df.ml.ts, aes(variable,variable)) + geom_line() + geom_point(data = df.ml.pred.svm) +
   geom_errorbar(data = df.ml.pred.svm, aes(ymin= variable - 4048, ymax = variable + 4048), width=1, size=0.5, position = pd) +
-  labs(title="-- Hiden --",  x ="-- Hiden --", y = "-- Hiden --") +
+  labs(title="-- Hidden --",  x ="-- Hidden --", y = "-- Hidden --") +
   theme_minimal()
