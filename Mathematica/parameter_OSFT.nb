@@ -1,0 +1,24 @@
+Parameter OSFT
+
+Based on arXiv: 0708.0366 (G. Calcagni - G. Nardelli)
+
+ \[Phi][r_, t_, i_] := 
+ 2 Exp[r \[Beta]] Sum[(-1)^
+    n Exp[-(r/\[Alpha]) (2 n + 1)^2] Exp[-(2 n + 1) t], {n, 0, i}]
+
+ \[Phi]2[r_, t_, i_] := 
+ 2 Exp[r \[Beta]] Sum[(-1)^
+    n Exp[-(r/\[Alpha]) (2 n + 1)^2] (2 n + 1)^2 Exp[-(2 n + 1) t], {n, 0, i}]
+
+ \[Phi]3[r_, t_, i_] := 
+ 2 Exp[r \[Beta]] Sum[(-1)^
+    n Exp[-((\[Alpha] + 1)/\[Alpha]) r (2 n + 1)^2] Exp[-(2 n + 1) t], {n, 0, 
+    i}]
+
+ LHS = ExpandAll[\[Phi][r, t, 1] - \[Phi]2[r, t, 1]]
+
+16 E^(-3 t - (9 r)/\[Alpha] + r \[Beta])
+
+RHS = ExpandAll[2 Exp[4 r] \[Phi]3[r, t, 0]^3]
+
+16 E^(r - 3 t - (3 r)/\[Alpha] + 3 r \[Beta])
